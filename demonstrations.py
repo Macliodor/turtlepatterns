@@ -31,3 +31,5 @@ import random
 # === RANDOM ===
 # turtlePattern(numIter=20, numSides=4, invert=True, fill=True, selColor=None, func=lambda x: random.randint(1,100), instant=True) # Random size from 1 to 100
 # turtlePattern(numIter=20, numSides=4, invert=True, fill=True, selColor=None, func=lambda x: random.randint(1,500), instant=True) # Random size from 1 to 500
+
+turtle.done()

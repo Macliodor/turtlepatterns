@@ -20,9 +20,9 @@ def turtlePattern(numIter, numSides, invert=False, fill=False, selColor=None, fu
     for i in range(numIter)[::invertMap[invert]]:
         if fill:
             t.begin_fill()
-        for j in range(shapeSize):
+        for j in range(numSides):
             t.forward(func(i))
-            t.left(360/shapeSize)
+            t.left(360/numSides)
         
         if not hasColor:
             color = generateHexColor()
