@@ -33,4 +33,5 @@ t = TurtlePattern(numSides=4, color=None, bgColor="#ffffff")
 # === RANDOM ===
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: random.randint(1,100), instant=True) # Random size from 1 to 100
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: random.randint(1,500), instant=True) # Random size from 1 to 500
+
 turtle.done()

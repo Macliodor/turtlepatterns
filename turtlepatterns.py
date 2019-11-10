@@ -13,10 +13,10 @@ class TurtlePattern:
     def _generateHexColor(self):
         return "#" + "".join(choice("0123456789ABCDEF") for c in range(6)) # 6 random choices from possible chars for hex color
 
-    def _generateModularColorMap(n):
+    def _generateModularColorMap(self, n):
         colormap = {}
         for i in range(n+1):
-            modmap[i] = self._generateHexColor()
+            colormap[i] = self._generateHexColor()
         return colormap
 
 
@@ -82,7 +82,7 @@ class TurtlePattern:
                 t.fillcolor(color)
                 t.begin_fill()
 
-            for j in range(numSides):
+            for j in range(self.numSides):
                 t.forward(func(i))
                 t.left(360/self.numSides)
 
@@ -91,4 +91,3 @@ class TurtlePattern:
 
             t.left(360/self.numSides)
         s.update()
-
