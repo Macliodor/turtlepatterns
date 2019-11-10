@@ -6,7 +6,7 @@ import math
 import random
 
 
-t = turtlePattern(numSides=4, color=None, bgColor="#ffffff")
+t = TurtlePattern(numSides=4, color=None, bgColor="#ffffff")
 # === LINEAR ===
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: x, instant=True) # Linear w/ slope of 1
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: 2*x, instant=True) # Linear w/ slope of 2
@@ -27,8 +27,8 @@ t = turtlePattern(numSides=4, color=None, bgColor="#ffffff")
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: 50*math.cos(x), instant=True) # Cosine
 
 # === MODULAR ===
-# t.shapePattern(numIter=200, invert=True, fill=True, func=lambda x: 50*(x%2), instant=True) # x mod 2 (divisible by 2)
-# t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: 50*(x%6), instant=True) # x mod 6 (divisibile by 6)
+t.shapePattern(numIter=200, invert=True, fill=True, func=lambda x: x*(x%2), instant=True) # x mod 2 (divisible by 2)
+# t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: x*(x%6), instant=True) # x mod 6 (divisibile by 6)
 
 # === RANDOM ===
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: random.randint(1,100), instant=True) # Random size from 1 to 100

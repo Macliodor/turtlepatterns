@@ -2,7 +2,7 @@ import turtle
 from random import choice
 
 
-class TurtlePatterns:
+class TurtlePattern:
 
     def __init__(self, numSides, color=None, bgColor="#ffffff"):
         self.numSides = numSides
@@ -10,11 +10,11 @@ class TurtlePatterns:
         self.bgColor = bgColor
         self.invertMap = {True: -1, False: 1}
 
-    def _generateHexColor():
+    def _generateHexColor(self):
         return "#" + "".join(choice("0123456789ABCDEF") for c in range(6)) # 6 random choices from possible chars for hex color
 
 
-    def shapePattern(numIter, invert=False, func=lambda x: x, instant=True):
+    def shapePattern(self, numIter, invert=False, fill=True, func=lambda x: x, instant=True):
          # For reversing iterable
         hasColor = not not self.color # Covert selected color to boolean (if passed=true, v.v)
 
@@ -28,13 +28,13 @@ class TurtlePatterns:
         t = turtle.Turtle()
         t.speed('fastest')
         s = t.getscreen()
-        s.bgcolor(bgColor)
+        s.bgcolor(self.bgColor)
 
         # Disable refresh if instant
         if instant:        
             s.tracer(0,0)
 
-        for i in range(numIter)[::invertMap[invert]]: # Reverse iterable to start from highest value based on invert map
+        for i in range(numIter)[::self.invertMap[invert]]: # Reverse iterable to start from highest value based on invert map
 
             if fill:
                 t.begin_fill()
