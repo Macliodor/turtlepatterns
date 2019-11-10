@@ -9,6 +9,7 @@ class TurtlePatterns:
         self.color = color
         self.bgColor = bgColor
         self.invertMap = {True: -1, False: 1}
+        self.turtle = turtle.Turtle()
 
     def _generateHexColor(self):
         return "#" + "".join(choice("0123456789ABCDEF") for c in range(6)) # 6 random choices from possible chars for hex color
@@ -31,9 +32,8 @@ class TurtlePatterns:
             color = self._generateHexColor() 
 
         # Setup turtle
-        t = turtle.Turtle()
-        t.speed('fastest')
-        s = t.getscreen()
+        self.turtle.speed('fastest')
+        s = self.turtle.getscreen()
         s.bgcolor(self.bgColor)
 
         # Disable refresh if instant
@@ -43,31 +43,31 @@ class TurtlePatterns:
         for i in range(numIter)[::self.invertMap[invert]]: # Reverse iterable to start from highest value based on invert map
 
             if fill:
-                t.begin_fill()
+                self.turtle.begin_fill()
             for j in range(self.numSides):
                 # Draw shape
-                t.forward(func(i))
-                t.left(360/self.numSides)
-            
+                self.turtle.forward(func(i))
+                self.turtle.left(360/self.numSides)
             if not hasColor:
                 color = self._generateHexColor()
             if fill: 
-                t.end_fill()
+                self.turtle.end_fill()
 
-            t.color(color)
-            t.fillcolor(color)
-            t.left(360/self.numSides)
+            self.turtle.color(color)
+            self.turtle.fillcolor(color)
+            self.turtle.left(360/self.numSides)
 
         # Refresh image
         s.update()
+        self.turtle = turtle.Turtle() # Reset turtle
 
     def modularPattern(self, numIter, invert=False, fill=False, func=lambda x: x, instant=True, divider=2):
 
         colormap = self._generateModularColorMap(divider) # Generates colors based on num mod divider
 
-        t = turtle.Turtle()
-        t.speed(100)
-        s = t.getscreen()
+        self.turtle = turtle.Turtle()
+        self.turtle.speed(100)
+        s = self.turtle.getscreen()
         s.bgcolor(self.bgColor)
 
         if instant:        
@@ -76,18 +76,19 @@ class TurtlePatterns:
         for i in range(numIter)[::self.invertMap[invert]]:
 
             color = colormap[i%divider] # Get color for line based on divisibility from color map
-            t.color(color)
+            self.turtle.color(color)
 
             if fill:
-                t.fillcolor(color)
-                t.begin_fill()
+                self.turtle.fillcolor(color)
+                self.turtle.begin_fill()
 
             for j in range(self.numSides):
-                t.forward(func(i))
-                t.left(360/self.numSides)
+                self.turtle.forward(func(i))
+                self.turtle.left(360/self.numSides)
 
             if fill: 
-                t.end_fill()
+                self.turtle.end_fill()
 
-            t.left(360/self.numSides)
+            self.turtle.left(360/self.numSides)
         s.update()
+        self.turtle = turtle.Turtle() 
