@@ -27,7 +27,7 @@ t = TurtlePattern(numSides=4, color=None, bgColor="#ffffff")
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: 50*math.cos(x), instant=True) # Cosine
 
 # === MODULAR ===
-t.shapePattern(numIter=200, invert=True, fill=True, func=lambda x: x*(x%2), instant=True) # x mod 2 (divisible by 2)
+# t.shapePattern(numIter=200, invert=True, fill=True, func=lambda x: x*(x%2), instant=True) # x mod 2 (divisible by 2)
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: x*(x%6), instant=True) # x mod 6 (divisibile by 6)
 
 # === RANDOM ===

@@ -13,8 +13,14 @@ class TurtlePattern:
     def _generateHexColor(self):
         return "#" + "".join(choice("0123456789ABCDEF") for c in range(6)) # 6 random choices from possible chars for hex color
 
+    def _generateModularColorMap(n):
+        colormap = {}
+        for i in range(n+1):
+            modmap[i] = self._generateHexColor()
+        return colormap
 
-    def shapePattern(self, numIter, invert=False, fill=True, func=lambda x: x, instant=True):
+
+    def shapePattern(self, numIter, invert=False, fill=False, func=lambda x: x, instant=True):
          # For reversing iterable
         hasColor = not not self.color # Covert selected color to boolean (if passed=true, v.v)
 
@@ -53,5 +59,36 @@ class TurtlePattern:
             t.left(360/self.numSides)
 
         # Refresh image
+        s.update()
+
+    def modularPattern(self, numIter, invert=False, fill=False, func=lambda x: x, instant=True, divider=2):
+
+        colormap = self._generateModularColorMap(divider) # Generates colors based on num mod divider
+
+        t = turtle.Turtle()
+        t.speed(100)
+        s = t.getscreen()
+        s.bgcolor(self.bgColor)
+
+        if instant:        
+            s.tracer(0,0)
+
+        for i in range(numIter)[::self.invertMap[invert]]:
+
+            color = colormap[i%divider]
+            t.color(color)
+
+            if fill:
+                t.fillcolor(color)
+                t.begin_fill()
+
+            for j in range(numSides):
+                t.forward(func(i))
+                t.left(360/self.numSides)
+
+            if fill: 
+                t.end_fill()
+
+            t.left(360/self.numSides)
         s.update()
 
