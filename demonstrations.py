@@ -7,7 +7,8 @@ import math
 import random
 
 
-t = TurtlePattern(numSides=4, color=None, bgColor="#ffffff")
+t = TurtlePatterns(numSides=4, color=None, bgColor="#ffffff")
+
 # === LINEAR ===
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: x, instant=True) # Linear w/ slope of 1
 # t.shapePattern(numIter=20, invert=True, fill=True, func=lambda x: 2*x, instant=True) # Linear w/ slope of 2

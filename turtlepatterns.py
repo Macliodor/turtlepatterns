@@ -2,7 +2,7 @@ import turtle
 from random import choice
 
 
-class TurtlePattern:
+class TurtlePatterns:
 
     def __init__(self, numSides, color=None, bgColor="#ffffff"):
         self.numSides = numSides
@@ -75,7 +75,7 @@ class TurtlePattern:
 
         for i in range(numIter)[::self.invertMap[invert]]:
 
-            color = colormap[i%divider]
+            color = colormap[i%divider] # Get color for line based on divisibility from color map
             t.color(color)
 
             if fill:
