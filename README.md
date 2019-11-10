@@ -6,7 +6,7 @@ TurtlePatterns allows you to create geometric visualizations of mathematical fun
 # Usage
 Below is an example showing the usage of the tool:
 
-    import turtlepatterns
+    from turtlepatterns import *
     
     def square(x):
 	    return x**2
