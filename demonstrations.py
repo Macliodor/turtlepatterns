@@ -25,11 +25,10 @@ import random
 # turtlePattern(numIter=20, numSides=4, invert=True, fill=True, selColor=None, func=lambda x: 50*math.cos(x), instant=True) # Cosine
 
 # === MODULAR ===
-# turtlePattern(numIter=20, numSides=4, invert=True, fill=True, selColor=None, func=lambda x: 50*(x%2), instant=True) # x mod 2 (divisible by 2)
+# turtlePattern(numIter=200, numSides=4, invert=True, fill=True, selColor=None, func=lambda x: 50*(x%2), instant=True) # x mod 2 (divisible by 2)
 # turtlePattern(numIter=20, numSides=4, invert=True, fill=True, selColor=None, func=lambda x: 50*(x%6), instant=True) # x mod 6 (divisibile by 6)
 
 # === RANDOM ===
 # turtlePattern(numIter=20, numSides=4, invert=True, fill=True, selColor=None, func=lambda x: random.randint(1,100), instant=True) # Random size from 1 to 100
 # turtlePattern(numIter=20, numSides=4, invert=True, fill=True, selColor=None, func=lambda x: random.randint(1,500), instant=True) # Random size from 1 to 500
-
 turtle.done()
