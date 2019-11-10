@@ -56,5 +56,4 @@ t = TurtlePatterns(numSides=4, color=None, bgColor="#ffffff")
 
 # t.modularPattern(numIter=20, invert=True, fill=True, func=lambda x: random.randint(1,100), instant=True, divider=3) # Random size from 1 to 100
 # t.modularPattern(numIter=20, invert=True, fill=True, func=lambda x: random.randint(1,500), instant=True, divider=3) # Random size from 1 to 500
-
 turtle.done()

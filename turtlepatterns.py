@@ -44,10 +44,14 @@ class TurtlePatterns:
 
             if fill:
                 self.turtle.begin_fill()
+
+            # Create shape
             for j in range(self.numSides):
                 # Draw shape
                 self.turtle.forward(func(i))
                 self.turtle.left(360/self.numSides)
+
+            # Color changing & fill    
             if not hasColor:
                 color = self._generateHexColor()
             if fill: 
